@@ -1,6 +1,6 @@
 import cv2
 from emotion_model import detect_emotion
-from spotify_recommender import get_playlist
+from spotify_recommender import get_recommendations
 
 cap = cv2.VideoCapture(0)
 
@@ -24,3 +24,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
