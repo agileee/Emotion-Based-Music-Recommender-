@@ -8,6 +8,12 @@
 
 Real-time, personalized music recommendation system that uses computer vision and deep learning to determine a user's current emotional state and recommends music from Spotify to match or influence that mood.
 
+## Features
+
+-> Real-Time Emotion Detection: Uses a Deep Learning CNN to instantly detect a user's emotion from a live webcam feed.
+
+-> Personalized Recommendations: Fetches music from Spotify tailored to the detected mood, using the user's Top Artists/Tracks as seeds for personalization.
+
 ## How to run
 
 ● Create a Virtual Environment (recommended)
