@@ -20,7 +20,7 @@ Real-time, personalized music recommendation system that uses computer vision an
 python -m venv venv
 
 Activate it:
-● Windows (Command Prompt):
+Windows (Command Prompt):
 venv\Scripts\activate
 You’ll see (venv) before your prompt.
 
