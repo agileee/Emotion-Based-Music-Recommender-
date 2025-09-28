@@ -1,7 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-# --- CONFIGURATION (Ensure these are your CORRECT keys) ---
 CLIENT_ID = "your_client_id"
 CLIENT_SECRET = "your_client_secret"
 REDIRECT_URI = "http://127.0.0.1:4301/callback"
@@ -58,4 +57,5 @@ def get_recommendations(emotion, limit=5):
             "url": track['external_urls']['spotify']
         })
     return songs
+
 
