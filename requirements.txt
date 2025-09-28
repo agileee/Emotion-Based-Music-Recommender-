@@ -1,0 +1,7 @@
+opencv-python
+tensorflow
+keras
+spotipy
+numpy
+pandas
+streamlit
