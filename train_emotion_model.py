@@ -1,12 +1,8 @@
-# train_emotion_model_image_folders.py
-
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense, BatchNormalization
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# --- 1. Setup Data Paths ---
-# Assuming your folders are structured like: EmotionMusicApp/fer2013/train/Angry, etc.
 data_dir = "fer2013" # The parent folder containing 'train' and 'test' folders
 train_dir = data_dir + "/train"
 test_dir = data_dir + "/test"
@@ -15,7 +11,6 @@ img_size = 48
 batch_size = 64
 num_classes = 7
 
-# --- 2. Data Generators for Augmentation and Loading ---
 # Training Data Generator (with Augmentation)
 train_datagen = ImageDataGenerator(
     rescale=1./255,
@@ -48,7 +43,7 @@ validation_generator = test_datagen.flow_from_directory(
     shuffle=False
 )
 
-# --- 3. Build CNN Model (A slightly better configuration) ---
+# Build CNN Model (A slightly better configuration) 
 model = Sequential([
     # Block 1
     Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(img_size, img_size, 1)),
@@ -78,7 +73,7 @@ model = Sequential([
     Dense(num_classes, activation='softmax')
 ])
 
-# --- 4. Compile and Train the Model ---
+# Compile and Train the Model 
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), 
               loss='categorical_crossentropy', 
               metrics=['accuracy'])
@@ -95,6 +90,7 @@ history = model.fit(
     validation_steps=validation_generator.samples // batch_size
 )
 
-# --- 5. Save the Trained Model ---
+# Save the Trained Model
 model.save("emotion_model.h5")
+
 print("Model trained and saved as emotion_model.h5")
