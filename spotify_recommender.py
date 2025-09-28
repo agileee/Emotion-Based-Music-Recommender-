@@ -1,11 +1,9 @@
-# spotify_recommender.py (FINAL FIXED VERSION)
-
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # --- CONFIGURATION (Ensure these are your CORRECT keys) ---
-CLIENT_ID = "8151b34c2d254d09b5392f88e53267f7"
-CLIENT_SECRET = "3e969e82c8f34c71acef0eab5ea4523f"
+CLIENT_ID = "your_client_id"
+CLIENT_SECRET = "your_client_secret"
 REDIRECT_URI = "http://127.0.0.1:4301/callback"
 SCOPE = "user-read-playback-state,user-modify-playback-state,user-read-currently-playing,user-top-read,playlist-modify-public"
 # ---------------------------------------------------------
@@ -60,3 +58,4 @@ def get_recommendations(emotion, limit=5):
             "url": track['external_urls']['spotify']
         })
     return songs
+
