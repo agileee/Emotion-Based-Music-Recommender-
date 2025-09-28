@@ -1,8 +1,12 @@
 # Python Project emotion based music recommender 
 
-## Solo Porject
+## Solo Project
 
 ----------------------------------------------
+
+## Description
+
+Real-time, personalized music recommendation system that uses computer vision and deep learning to determine a user's current emotional state and recommends music from Spotify to match or influence that mood.
 
 ## How to run
 
